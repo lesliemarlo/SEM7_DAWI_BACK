@@ -23,6 +23,27 @@ public class RevistaServiceImpl implements RevistaService{
 	public List<Revista> listaTodos() {
 		return repository.findAll();
 	}
+
+	@Override
+	public List<Revista> listaRevistaPorNombreLike(String nombre) {
+		return repository.listaPorNombreLike(nombre);
+	}
+
+	@Override
+	public void eliminaRevista(int idRevista) {
+		repository.deleteById(idRevista);
+		
+	}
+
+	@Override
+	public List<Revista> listaRevistaPorNombreIgualRegistra(String nombre) {
+		return repository.listaPorNombreIgualRegistra(nombre);
+	}
+
+	@Override
+	public List<Revista> listaRevistaPorNombreIgualActualiza(String nombre, int idRevista) {
+		return repository.listaPorNombreIgualActualiza(nombre, idRevista);
+	}
 	
 
 }
